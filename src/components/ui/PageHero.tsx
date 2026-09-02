@@ -23,9 +23,6 @@ export function PageHero({
         {showCtas && (
           <div className="mt-7 flex flex-wrap gap-3">
             <Button href="/demo">Request a Demo</Button>
-            <Button href="/contact" variant="secondary">
-              Contact Sovtels
-            </Button>
           </div>
         )}
       </Container>

@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { footerLinks } from "@/data/navigation";
+import { siteConfig } from "@/lib/seo";
 import { Container } from "@/components/ui/Section";
 import { Logo } from "@/components/ui/Logo";
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.17 2.09 16.06 2 14.79 2 12.15 2 10 3.66 10 6.7V9.5H7.5v4H10V22h4z" />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -15,6 +24,30 @@ export function Footer() {
               Reservations, rooms, guests, housekeeping, finance, services, staff and reports — connected.
             </p>
             <p className="font-display mt-5 text-2xl text-brand">Run Better, Spend Less.</p>
+            <div className="mt-5 space-y-2 text-sm text-muted">
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                {siteConfig.phones.map((phone) => (
+                  <a key={phone.href} href={phone.href} className="font-mono hover:text-charcoal">
+                    {phone.label}
+                  </a>
+                ))}
+              </div>
+              <p>
+                Viber{" "}
+                <a href={siteConfig.viber.href} className="font-mono hover:text-charcoal">
+                  {siteConfig.viber.label}
+                </a>
+              </p>
+              <a
+                href={siteConfig.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-charcoal"
+              >
+                <FacebookIcon className="h-4 w-4 text-brand" />
+                Facebook
+              </a>
+            </div>
           </div>
           <div className="md:col-span-3">
             <p className="mb-3 text-[11px] tracking-[0.18em] text-brand uppercase">Product</p>

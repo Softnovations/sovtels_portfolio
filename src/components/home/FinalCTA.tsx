@@ -25,9 +25,6 @@ export function FinalCTA() {
           <Button href="/demo" size="lg" className="w-full sm:w-auto">
             Request Demo
           </Button>
-          <Button href="/contact" variant="onDark" size="lg" className="w-full sm:w-auto">
-            Contact Sovtels
-          </Button>
         </div>
       </Container>
     </section>

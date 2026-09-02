@@ -3,14 +3,14 @@ export const navLinks = [
   { href: "/features", label: "Features" },
   { href: "/solutions", label: "Solutions" },
   { href: "/why-sovtels", label: "Why Sovtels" },
-  { href: "/contact", label: "Contact" },
+  { href: "/demo", label: "Contact" },
 ] as const;
 
 export const mobileNavLinks = [
   { href: "/product", label: "Product" },
   { href: "/features", label: "Features" },
   { href: "/why-sovtels", label: "Why Sovtels" },
-  { href: "/contact", label: "Contact" },
+  { href: "/demo", label: "Contact" },
 ] as const;
 
 export const footerLinks = {
@@ -24,6 +24,5 @@ export const footerLinks = {
     { href: "/why-sovtels", label: "Why Sovtels" },
     { href: "/solutions", label: "Who it's for" },
     { href: "/demo", label: "Request a Demo" },
-    { href: "/contact", label: "Contact Sovtels" },
   ],
 };
