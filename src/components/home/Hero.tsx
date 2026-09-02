@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-mesh-hero pt-28 pb-16 md:pt-32 md:pb-20">
       {/* Mobile */}
-      <div className="mx-auto max-w-[1200px] px-5 md:hidden">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:hidden">
         <Reveal>
           <p className="section-kicker">Sovtels Hotel & Motel Management</p>
           <h1 className="font-display mt-3 text-[clamp(2.75rem,11vw,3.5rem)] leading-[0.95] text-charcoal">
@@ -39,7 +39,7 @@ export function Hero() {
           <ProductFrame scale={0.72}>
             <DashboardScreen />
           </ProductFrame>
-          <div className="absolute -right-1 -bottom-4 z-10 h-28 w-28">
+          <div className="pointer-events-none absolute right-0 -bottom-3 z-10 h-28 w-28">
             <Image
               src="/images/mascot.png"
               alt=""
@@ -53,8 +53,8 @@ export function Hero() {
       </div>
 
       {/* Desktop */}
-      <div className="relative mx-auto hidden max-w-[1200px] items-center gap-8 px-5 sm:px-8 md:grid lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-4">
+      <div className="relative mx-auto hidden max-w-[1200px] items-center gap-8 px-5 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-10">
+        <div className="min-w-0 lg:col-span-5 xl:col-span-4">
           <Reveal>
             <p className="section-kicker">Sovtels Hotel & Motel Management</p>
             <h1 className="font-display mt-4 text-[clamp(2.8rem,5.5vw,4.4rem)] leading-[0.95] text-charcoal">
@@ -75,7 +75,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="relative lg:col-span-8">
+        <Reveal delay={0.1} className="relative min-w-0 lg:col-span-7 xl:col-span-8">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export function Hero() {
               initial={reduce ? false : { opacity: 0, scale: 0.92, y: 12 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.45 }}
-              className="absolute -bottom-6 -left-4 z-10 h-36 w-36 xl:-left-8 xl:h-44 xl:w-44"
+              className="pointer-events-none absolute right-0 -bottom-6 z-10 h-36 w-36 xl:h-44 xl:w-44"
             >
               <div
                 className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(22,142,0,0.18),transparent_70%)] blur-md"

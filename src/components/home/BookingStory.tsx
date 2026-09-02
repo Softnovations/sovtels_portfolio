@@ -23,7 +23,7 @@ function StoryVisual({ stepId }: { stepId: string }) {
 
 function MobileBookingStory() {
   return (
-    <section className="border-y border-line bg-white py-14 md:hidden">
+    <section className="border-y border-line bg-white py-14 lg:hidden">
       <Container>
         <Reveal>
           <p className="section-kicker">Front office</p>
@@ -63,7 +63,7 @@ function DesktopBookingStory() {
 
   if (reduce) {
     return (
-      <section className="hidden border-y border-line bg-white py-20 md:block">
+      <section className="hidden border-y border-line bg-white py-20 lg:block">
         <Container>
           <h2 className="section-title mt-2">From Booking to Check-Out.</h2>
           <div className="mt-10 space-y-12">
@@ -85,7 +85,7 @@ function DesktopBookingStory() {
   }
 
   return (
-    <section className="hidden border-y border-line bg-white md:block">
+    <section className="hidden border-y border-line bg-white lg:block">
       <div ref={wrapRef} className="relative">
         <div
           ref={pinRef}

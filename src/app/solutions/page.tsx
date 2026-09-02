@@ -26,18 +26,18 @@ export default function SolutionsPage() {
       <PageHero
         eyebrow="Solutions"
         title="Built for hospitality businesses of different sizes."
-        kicker="The same operational core — scaled to how your property actually works."
+        kicker="Hotels, motels, guesthouses, resorts and more — the same operational core, scaled to how your property works."
       />
-      <WhoFor />
+      <WhoFor hideHeader />
       <section className="border-t border-line bg-paper-2 py-14 md:py-20">
         <Container>
           <p className="section-kicker">Property types</p>
           <h2 className="section-title mt-2">How Sovtels fits each property.</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 card-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((a) => (
-              <article key={a.id} className="surface-card">
+              <article key={a.id} className="surface-card flex h-full flex-col">
                 <h3 className="text-lg font-medium text-charcoal">{a.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{extra[a.id]}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{extra[a.id]}</p>
               </article>
             ))}
           </div>

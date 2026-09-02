@@ -5,7 +5,7 @@ export function PageHero({
   eyebrow,
   title,
   kicker,
-  showCtas = true,
+  showCtas = false,
 }: {
   eyebrow: string;
   title: string;

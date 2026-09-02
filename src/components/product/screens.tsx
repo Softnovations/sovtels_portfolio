@@ -532,58 +532,59 @@ export function FinanceScreen() {
     ["01 Sep", "380,000", "85,000", "18,000", "103,000", "277,000", "10,000"],
     ["31 Aug", "510,000", "110,000", "40,000", "150,000", "360,000", "15,000"],
   ];
+  const dailyHead = ["Period", "Revenue", "Salary", "Maintenance", "Total Cost", "Profit", "Booking Fee"];
 
   return (
     <AppShell active="financial-report" title="Financial Report">
-      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-[18px] font-semibold text-charcoal">Financial Report</p>
-          <p className="mt-0.5 text-[12px] text-muted">
+      <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <p className="text-[16px] font-semibold text-charcoal sm:text-[18px]">Financial Report</p>
+          <p className="mt-0.5 text-[12px] leading-relaxed text-muted">
             Actual revenue from checkout invoices minus approved payroll and maintenance costs.
           </p>
         </div>
         <button
           type="button"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3.5 py-2 text-[12px] font-medium text-white"
+          className="inline-flex w-full shrink-0 items-center justify-center gap-1.5 rounded-lg bg-brand px-3.5 py-2 text-[12px] font-medium text-white sm:w-auto"
         >
           <Download className="h-3.5 w-3.5" />
           Export CSV
         </button>
       </div>
 
-      <div className="mb-3 flex flex-wrap items-end gap-2">
-        <label className="min-w-[120px] flex-1">
+      <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-end">
+        <label className="min-w-0 w-full sm:min-w-[120px] sm:flex-1">
           <span className="mb-1 block text-[10px] text-muted">From</span>
           <span className="inline-flex w-full items-center gap-1.5 rounded-lg border border-[#e8ece6] bg-white px-2.5 py-1.5 text-[11px] text-charcoal">
-            <Calendar className="h-3.5 w-3.5 text-muted" />
+            <Calendar className="h-3.5 w-3.5 shrink-0 text-muted" />
             31/08/2026
           </span>
         </label>
-        <label className="min-w-[120px] flex-1">
+        <label className="min-w-0 w-full sm:min-w-[120px] sm:flex-1">
           <span className="mb-1 block text-[10px] text-muted">To</span>
           <span className="inline-flex w-full items-center gap-1.5 rounded-lg border border-[#e8ece6] bg-white px-2.5 py-1.5 text-[11px] text-charcoal">
-            <Calendar className="h-3.5 w-3.5 text-muted" />
+            <Calendar className="h-3.5 w-3.5 shrink-0 text-muted" />
             02/09/2026
           </span>
         </label>
         <button
           type="button"
-          className="rounded-lg bg-brand px-4 py-1.5 text-[12px] font-medium text-white"
+          className="w-full rounded-lg bg-brand px-4 py-1.5 text-[12px] font-medium text-white sm:w-auto"
         >
           Filter
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm"
+            className="min-w-0 rounded-xl border border-[#e8ece6] bg-white p-2.5 shadow-sm sm:p-3"
           >
-            <p className="text-[11px] text-muted">{kpi.label}</p>
+            <p className="text-[10px] text-muted sm:text-[11px]">{kpi.label}</p>
             <p
               className={cn(
-                "mt-1.5 text-[15px] font-semibold",
+                "mt-1.5 text-[12px] font-semibold leading-snug break-words sm:text-[15px]",
                 kpi.tone === "cost" ? "text-[#e53935]" : "text-brand",
               )}
             >
@@ -594,46 +595,74 @@ export function FinanceScreen() {
         ))}
       </div>
 
-      <div className="mt-3 grid gap-2 lg:grid-cols-2">
-        <div className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
+      <div className="mt-3 grid min-w-0 gap-2 lg:grid-cols-2">
+        <div className="min-w-0 rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
           <p className="text-[13px] font-semibold text-charcoal">Income Reference</p>
           <dl className="mt-2 space-y-1.5 text-[11px]">
             {income.map(([label, value]) => (
               <div key={label} className="flex justify-between gap-3 border-b border-[#e8ece6] pb-1.5 last:border-0">
-                <dt className="text-muted">{label}</dt>
-                <dd className="font-mono text-charcoal">{value}</dd>
+                <dt className="min-w-0 text-muted">{label}</dt>
+                <dd className="shrink-0 font-mono text-charcoal">{value}</dd>
               </div>
             ))}
           </dl>
         </div>
-        <div className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
+        <div className="min-w-0 rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
           <p className="text-[13px] font-semibold text-charcoal">Cost Summary</p>
           <dl className="mt-2 space-y-1.5 text-[11px]">
             {costs.map(([label, value]) => (
               <div key={label} className="flex justify-between gap-3 border-b border-[#e8ece6] pb-1.5 last:border-0">
-                <dt className="text-muted">{label}</dt>
-                <dd className="font-mono text-charcoal">{value}</dd>
+                <dt className="min-w-0 text-muted">{label}</dt>
+                <dd className="shrink-0 font-mono text-charcoal">{value}</dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
 
-      <div className="mt-3 overflow-hidden rounded-xl border border-[#e8ece6] bg-white shadow-sm">
+      <div className="mt-3 min-w-0 overflow-hidden rounded-xl border border-[#e8ece6] bg-white shadow-sm">
         <p className="border-b border-[#e8ece6] bg-[#f8faf7] px-3 py-2 text-[12px] font-semibold text-charcoal">
           Daily Breakdown
         </p>
-        <div className="overflow-x-auto">
+        <div className="space-y-2 p-2 lg:hidden">
+          {daily.map((row) => (
+            <div key={row[0]} className="min-w-0 rounded-lg border border-[#e8ece6] bg-[#fbfbfa] p-2.5 sm:p-3">
+              <p className="text-[12px] font-semibold text-charcoal">{row[0]}</p>
+              <dl className="mt-2 grid grid-cols-1 gap-y-1.5 text-[11px] min-[380px]:grid-cols-2 min-[380px]:gap-x-3 min-[380px]:gap-y-2">
+                {[
+                  { label: "Revenue", value: row[1] },
+                  { label: "Profit", value: row[5], accent: true },
+                  { label: "Salary", value: row[2] },
+                  { label: "Maintenance", value: row[3] },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex min-w-0 items-baseline justify-between gap-2 min-[380px]:flex-col min-[380px]:items-start min-[380px]:justify-start min-[380px]:gap-0.5"
+                  >
+                    <dt className="shrink-0 text-muted">{item.label}</dt>
+                    <dd
+                      className={cn(
+                        "min-w-0 text-right font-mono tabular-nums tracking-tight min-[380px]:text-left",
+                        item.accent ? "font-medium text-brand" : "text-charcoal",
+                      )}
+                    >
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+        <div className="hidden min-w-0 overflow-x-auto lg:block">
           <table className="w-full min-w-[520px] text-left text-[10px]">
             <thead className="text-[9px] tracking-wide text-muted uppercase">
               <tr>
-                {["Period", "Revenue", "Salary", "Maintenance", "Total Cost", "Profit", "Booking Fee"].map(
-                  (h) => (
-                    <th key={h} className="px-3 py-2 font-medium whitespace-nowrap">
-                      {h}
-                    </th>
-                  ),
-                )}
+                {dailyHead.map((h) => (
+                  <th key={h} className="px-3 py-2 font-medium whitespace-nowrap">
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>

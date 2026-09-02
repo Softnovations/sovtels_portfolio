@@ -14,7 +14,7 @@ import { useReducedMotion } from "framer-motion";
 
 function MobileHousekeeping() {
   return (
-    <section className="bg-mesh-warm border-y border-line py-14 md:hidden">
+    <section className="bg-mesh-warm border-y border-line py-14 lg:hidden">
       <Container>
         <Reveal>
           <p className="section-kicker">Connected operations</p>
@@ -52,7 +52,7 @@ function DesktopHousekeeping() {
   });
 
   return (
-    <section className="bg-mesh-warm hidden border-y border-line md:block">
+    <section className="bg-mesh-warm hidden border-y border-line lg:block">
       <div ref={wrapRef} className="relative">
         <div
           ref={pinRef}

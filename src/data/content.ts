@@ -1,19 +1,19 @@
 export const whyPoints = [
   {
     title: "One Connected System",
-    body: "Manage hotel operations from one platform.",
+    body: "Reservations, rooms, housekeeping, finance and staff stay linked — so the hotel runs from one place.",
   },
   {
     title: "Less Manual Work",
-    body: "Reduce repetitive daily processes.",
+    body: "Cut repetitive paper, spreadsheet, and message chasing from daily operations.",
   },
   {
     title: "Clearer Operations",
-    body: "Know what's happening across rooms and departments.",
+    body: "See occupancy, arrivals, room status and revenue without checking every department separately.",
   },
   {
     title: "Built for Hospitality",
-    body: "Designed around real hotel and motel workflows.",
+    body: "Designed around real hotel and motel workflows — not generic business software adapted later.",
   },
 ];
 

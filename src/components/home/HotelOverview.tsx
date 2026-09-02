@@ -41,15 +41,15 @@ export function HotelOverview() {
 
           <Reveal delay={0.1}>
             <p className="section-label mb-2">Reservation & room availability</p>
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+            <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_220px] xl:items-stretch">
               <ProductFrame scale={PREVIEW_SCALE}>
                 <ReservationManagementScreen />
               </ProductFrame>
-              <div>
+              <div className="min-w-0">
                 <p className="section-label mb-2">Today</p>
-                <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+                <div className="card-grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-1">
                   {todayPanel.map((item) => (
-                    <div key={item.label} className="surface-card !p-4 !shadow-none">
+                    <div key={item.label} className="surface-card flex h-full flex-col !p-3 !shadow-none sm:!p-4">
                       <p className="text-[11px] font-medium tracking-[0.1em] text-muted uppercase">
                         {item.label}
                       </p>

@@ -1,6 +1,5 @@
 export const navLinks = [
   { href: "/product", label: "Product" },
-  { href: "/features", label: "Features" },
   { href: "/solutions", label: "Solutions" },
   { href: "/why-sovtels", label: "Why Sovtels" },
   { href: "/demo", label: "Contact" },
@@ -8,7 +7,6 @@ export const navLinks = [
 
 export const mobileNavLinks = [
   { href: "/product", label: "Product" },
-  { href: "/features", label: "Features" },
   { href: "/why-sovtels", label: "Why Sovtels" },
   { href: "/demo", label: "Contact" },
 ] as const;

@@ -7,8 +7,6 @@ import { Container } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
-const PREVIEW_SCALE = 0.78;
-
 export function FinanceSnapshot() {
   return (
     <section className="border-y border-line bg-white py-14 md:py-20">
@@ -21,23 +19,23 @@ export function FinanceSnapshot() {
           </p>
         </Reveal>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)] lg:items-start">
-          <Reveal delay={0.08}>
-            <div className="surface-card bg-paper">
+        <div className="mt-8 grid min-w-0 items-stretch gap-6 xl:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)]">
+          <Reveal delay={0.08} className="min-w-0">
+            <div className="surface-card h-full bg-paper">
               <p className="section-label">At a glance</p>
               <dl className="mt-4 space-y-3">
                 {financeMetrics.map((m) => (
                   <div
                     key={m.label}
                     className={cn(
-                      "flex items-baseline justify-between border-b border-line pb-3 last:border-0",
+                      "flex items-baseline justify-between gap-3 border-b border-line pb-3 last:border-0",
                       "accent" in m && m.accent && "border-brand/20",
                     )}
                   >
-                    <dt className="text-[14px] text-muted">{m.label}</dt>
+                    <dt className="min-w-0 text-[14px] text-muted">{m.label}</dt>
                     <dd
                       className={cn(
-                        "font-mono font-medium",
+                        "shrink-0 font-mono font-medium",
                         "accent" in m && m.accent ? "text-xl text-brand" : "text-base text-charcoal",
                       )}
                     >
@@ -49,8 +47,8 @@ export function FinanceSnapshot() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.12}>
-            <ProductFrame scale={PREVIEW_SCALE}>
+          <Reveal delay={0.12} className="min-w-0">
+            <ProductFrame>
               <FinanceScreen />
             </ProductFrame>
           </Reveal>

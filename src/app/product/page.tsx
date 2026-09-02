@@ -32,20 +32,20 @@ export default function ProductPage() {
       />
       <section className="py-14 md:py-20">
         <Container>
-          <div className="space-y-10">
+          <div className="card-grid grid-cols-1 md:grid-cols-2">
             {productGallery.map(({ screen, label }) => (
-              <div key={screen}>
+              <div key={screen} className="min-w-0">
                 <p className="section-label mb-3">{label}</p>
                 <ProductScreenImage screen={screen} priority={screen === "dashboard"} />
               </div>
             ))}
           </div>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2">
+          <div className="mt-16 card-grid grid-cols-1 sm:grid-cols-2">
             {featureGroups.map((g) => (
-              <div key={g.id}>
+              <div key={g.id} className="surface-card flex h-full flex-col">
                 <p className="section-label">{g.title}</p>
-                <ul className="mt-3 space-y-3">
+                <ul className="mt-3 flex-1 space-y-3">
                   {g.items.map((item) => (
                     <li key={item.id} className="border-t border-line pt-3">
                       <p className="font-medium text-charcoal">{item.title}</p>

@@ -82,9 +82,9 @@ export function AppShell({
   const navActive = resolveActiveNav(active);
 
   return (
-    <div className="sovtels-app-shell overflow-hidden text-left text-charcoal">
-      <div className="flex min-h-[340px]">
-        <aside className="hidden w-[210px] shrink-0 flex-col border-r border-[#e8ece6] bg-[#fbfbfa] sm:flex">
+    <div className="sovtels-app-shell w-full min-w-0 overflow-hidden text-left text-charcoal">
+      <div className="flex min-h-[340px] w-full min-w-0">
+        <aside className="hidden w-[210px] shrink-0 flex-col border-r border-[#e8ece6] bg-[#fbfbfa] lg:flex">
           <div className="flex items-center gap-2.5 border-b border-[#e8ece6] px-4 py-4">
             <span className="relative h-8 w-8 overflow-hidden rounded-md bg-white ring-1 ring-line">
               <Image src="/images/logo.png" alt="" fill className="object-contain p-0.5" sizes="32px" />
@@ -147,11 +147,11 @@ export function AppShell({
         <div className="min-w-0 flex-1 bg-[#f3f5f2]">
           <div className="flex items-center justify-between border-b border-[#e8ece6] bg-white px-4 py-3">
             <div className="flex items-center gap-3">
-              <Menu className="h-5 w-5 text-muted sm:hidden" aria-hidden />
+              <Menu className="h-5 w-5 text-muted lg:hidden" aria-hidden />
               <h2 className="text-xl font-semibold text-charcoal">{title}</h2>
             </div>
             <div className="flex items-center gap-2">
-              <span className="hidden items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1 text-[10px] text-muted sm:inline-flex">
+              <span className="hidden items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1 text-[10px] text-muted lg:inline-flex">
                 <Building2 className="h-3.5 w-3.5 text-brand" />
                 admin premium
               </span>
@@ -161,7 +161,7 @@ export function AppShell({
                   5
                 </span>
               </span>
-              <span className="hidden items-center gap-1 rounded-lg border border-line bg-white px-2 py-1.5 text-[10px] text-muted sm:inline-flex">
+              <span className="hidden items-center gap-1 rounded-lg border border-line bg-white px-2 py-1.5 text-[10px] text-muted lg:inline-flex">
                 <Globe className="h-3.5 w-3.5" />
                 English
                 <ChevronDown className="h-3 w-3" />
@@ -169,7 +169,7 @@ export function AppShell({
             </div>
           </div>
 
-          <div className={cn("p-4", compact && "p-3")}>{children}</div>
+          <div className={cn("min-w-0 p-3 sm:p-4", compact && "p-3")}>{children}</div>
         </div>
       </div>
     </div>

@@ -17,8 +17,8 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-white pt-14 pb-8">
       <Container>
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12">
+          <div className="sm:col-span-2 lg:col-span-5">
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               Reservations, rooms, guests, housekeeping, finance, services, staff and reports — connected.
@@ -49,7 +49,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="md:col-span-3">
+          <div className="lg:col-span-3">
             <p className="section-label mb-3">Product</p>
             <ul className="space-y-2 text-sm text-muted">
               {footerLinks.product.map((l) => (
@@ -61,7 +61,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div className="md:col-span-4">
+          <div className="lg:col-span-4">
             <p className="section-label mb-3">Company</p>
             <ul className="space-y-2 text-sm text-muted">
               {footerLinks.company.map((l) => (
@@ -77,6 +77,12 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line pt-6 sm:flex-row">
           <p className="text-xs text-muted-2">
             © {new Date().getFullYear()} Sovtels. Hotel & Motel Management.
+            <span className="mx-1.5 text-line-strong" aria-hidden>
+              ·
+            </span>
+            <Link href="/privacy-policy" className="text-muted-2 transition-colors hover:text-muted">
+              Privacy
+            </Link>
           </p>
           <div className="relative h-10 w-10 overflow-hidden rounded-full bg-charcoal">
             <Image

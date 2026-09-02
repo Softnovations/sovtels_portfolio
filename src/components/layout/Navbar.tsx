@@ -76,7 +76,6 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu — compact, fast */}
         <AnimatePresence>
           {open && (
             <motion.div

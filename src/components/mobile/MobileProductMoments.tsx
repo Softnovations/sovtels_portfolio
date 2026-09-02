@@ -39,11 +39,11 @@ export function MobileHeroDashboard() {
 
   return (
     <MobileShell title="Dashboard">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="card-grid grid-cols-3">
         {kpis.map((kpi) => (
           <div
             key={kpi.label}
-            className="relative overflow-hidden rounded-xl border border-[#e8ece6] bg-white p-4"
+            className="relative flex h-full min-h-[5.25rem] flex-col overflow-hidden rounded-xl border border-[#e8ece6] bg-white p-3 sm:p-4"
           >
             <div className="absolute inset-y-3 right-0 w-1 rounded-l-full bg-brand" />
             <p className="text-[11px] text-muted">{kpi.label}</p>
@@ -53,9 +53,12 @@ export function MobileHeroDashboard() {
           </div>
         ))}
       </div>
-      <div className="mt-5 grid grid-cols-2 gap-2.5">
+      <div className="card-grid mt-5 grid-cols-2">
         {rooms.map((r) => (
-          <div key={r.number} className="rounded-xl border border-line bg-paper px-3 py-3.5 text-center">
+          <div
+            key={r.number}
+            className="flex h-full min-h-[5.75rem] flex-col items-center justify-center rounded-xl border border-line bg-paper px-3 py-3.5 text-center"
+          >
             <p className="font-mono text-xl font-medium text-charcoal">{r.number}</p>
             <p
               className={cn(
@@ -131,18 +134,18 @@ export function MobileRoomCards() {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="card-grid grid-cols-2">
       {rooms.map((r) => (
         <div
           key={r.number}
-          className="surface-card !p-5"
+          className="surface-card flex h-full min-h-[7.5rem] flex-col justify-between !p-5"
         >
           <p className="font-mono text-[clamp(1.75rem,7vw,2.25rem)] font-medium leading-none text-charcoal">
             {r.number}
           </p>
           <p
             className={cn(
-              "mt-3 inline-block text-[12px] font-semibold uppercase",
+              "mt-3 inline-block w-fit text-[12px] font-semibold uppercase",
               roomStatusMeta[r.status].className,
               "rounded-md px-2.5 py-1",
             )}
