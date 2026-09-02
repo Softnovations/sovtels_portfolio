@@ -506,15 +506,156 @@ export function RestaurantScreen() {
 }
 
 export function FinanceScreen() {
+  const kpis = [
+    { label: "Revenue", value: "2,450,000 MMK", hint: "48 invoices", tone: "brand" as const },
+    { label: "Salary Cost", value: "620,000 MMK", hint: "12 approved payrolls", tone: "cost" as const },
+    { label: "Maintenance Cost", value: "180,000 MMK", hint: "6 records", tone: "cost" as const },
+    { label: "Profit", value: "1,650,000 MMK", hint: "Revenue minus costs", tone: "brand" as const },
+  ];
+
+  const income = [
+    ["Actual invoice revenue", "2,450,000 MMK"],
+    ["Booking total", "1,980,000 MMK"],
+    ["Reservation total", "1,720,000 MMK"],
+    ["Check-in total", "2,100,000 MMK"],
+    ["Deposit total", "350,000 MMK"],
+  ];
+
+  const costs = [
+    ["Approved salary", "620,000 MMK"],
+    ["Maintenance", "180,000 MMK"],
+    ["Total cost", "800,000 MMK"],
+  ];
+
+  const daily = [
+    ["02 Sep", "420,000", "90,000", "25,000", "115,000", "305,000", "12,000"],
+    ["01 Sep", "380,000", "85,000", "18,000", "103,000", "277,000", "10,000"],
+    ["31 Aug", "510,000", "110,000", "40,000", "150,000", "360,000", "15,000"],
+  ];
+
   return (
-    <AppShell active="finance" title="Financial Report">
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-        <Metric label="Today Revenue" value="1.85M" />
-        <Metric label="Room" value="1.40M" />
-        <Metric label="Services" value="280K" />
-        <Metric label="Restaurant" value="170K" />
-        <Metric label="Expenses" value="420K" />
-        <Metric label="Net" value="1.43M" accent />
+    <AppShell active="financial-report" title="Financial Report">
+      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-[18px] font-semibold text-charcoal">Financial Report</p>
+          <p className="mt-0.5 text-[12px] text-muted">
+            Actual revenue from checkout invoices minus approved payroll and maintenance costs.
+          </p>
+        </div>
+        <button
+          type="button"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3.5 py-2 text-[12px] font-medium text-white"
+        >
+          <Download className="h-3.5 w-3.5" />
+          Export CSV
+        </button>
+      </div>
+
+      <div className="mb-3 flex flex-wrap items-end gap-2">
+        <label className="min-w-[120px] flex-1">
+          <span className="mb-1 block text-[10px] text-muted">From</span>
+          <span className="inline-flex w-full items-center gap-1.5 rounded-lg border border-[#e8ece6] bg-white px-2.5 py-1.5 text-[11px] text-charcoal">
+            <Calendar className="h-3.5 w-3.5 text-muted" />
+            31/08/2026
+          </span>
+        </label>
+        <label className="min-w-[120px] flex-1">
+          <span className="mb-1 block text-[10px] text-muted">To</span>
+          <span className="inline-flex w-full items-center gap-1.5 rounded-lg border border-[#e8ece6] bg-white px-2.5 py-1.5 text-[11px] text-charcoal">
+            <Calendar className="h-3.5 w-3.5 text-muted" />
+            02/09/2026
+          </span>
+        </label>
+        <button
+          type="button"
+          className="rounded-lg bg-brand px-4 py-1.5 text-[12px] font-medium text-white"
+        >
+          Filter
+        </button>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+        {kpis.map((kpi) => (
+          <div
+            key={kpi.label}
+            className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm"
+          >
+            <p className="text-[11px] text-muted">{kpi.label}</p>
+            <p
+              className={cn(
+                "mt-1.5 text-[15px] font-semibold",
+                kpi.tone === "cost" ? "text-[#e53935]" : "text-brand",
+              )}
+            >
+              {kpi.value}
+            </p>
+            <p className="mt-0.5 text-[10px] text-muted">{kpi.hint}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-3 grid gap-2 lg:grid-cols-2">
+        <div className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
+          <p className="text-[13px] font-semibold text-charcoal">Income Reference</p>
+          <dl className="mt-2 space-y-1.5 text-[11px]">
+            {income.map(([label, value]) => (
+              <div key={label} className="flex justify-between gap-3 border-b border-[#e8ece6] pb-1.5 last:border-0">
+                <dt className="text-muted">{label}</dt>
+                <dd className="font-mono text-charcoal">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="rounded-xl border border-[#e8ece6] bg-white p-3 shadow-sm">
+          <p className="text-[13px] font-semibold text-charcoal">Cost Summary</p>
+          <dl className="mt-2 space-y-1.5 text-[11px]">
+            {costs.map(([label, value]) => (
+              <div key={label} className="flex justify-between gap-3 border-b border-[#e8ece6] pb-1.5 last:border-0">
+                <dt className="text-muted">{label}</dt>
+                <dd className="font-mono text-charcoal">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <div className="mt-3 overflow-hidden rounded-xl border border-[#e8ece6] bg-white shadow-sm">
+        <p className="border-b border-[#e8ece6] bg-[#f8faf7] px-3 py-2 text-[12px] font-semibold text-charcoal">
+          Daily Breakdown
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[520px] text-left text-[10px]">
+            <thead className="text-[9px] tracking-wide text-muted uppercase">
+              <tr>
+                {["Period", "Revenue", "Salary", "Maintenance", "Total Cost", "Profit", "Booking Fee"].map(
+                  (h) => (
+                    <th key={h} className="px-3 py-2 font-medium whitespace-nowrap">
+                      {h}
+                    </th>
+                  ),
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {daily.map((row) => (
+                <tr key={row[0]} className="border-t border-[#e8ece6]">
+                  {row.map((cell, i) => (
+                    <td
+                      key={`${row[0]}-${i}`}
+                      className={cn(
+                        "px-3 py-2 whitespace-nowrap",
+                        i === 0 ? "font-medium text-charcoal" : "font-mono text-muted",
+                        i === 5 && "font-medium text-brand",
+                      )}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </AppShell>
   );

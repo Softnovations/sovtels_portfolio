@@ -1,10 +1,13 @@
 "use client";
 
-import { ProductScreenImage } from "@/components/product/DashboardImage";
+import { FinanceScreen } from "@/components/product/screens";
+import { ProductFrame } from "@/components/product/ProductFrame";
 import { financeMetrics } from "@/data/homepage";
 import { Container } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
+
+const PREVIEW_SCALE = 0.78;
 
 export function FinanceSnapshot() {
   return (
@@ -18,7 +21,7 @@ export function FinanceSnapshot() {
           </p>
         </Reveal>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)]">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)] lg:items-start">
           <Reveal delay={0.08}>
             <div className="surface-card bg-paper">
               <p className="section-label">At a glance</p>
@@ -47,7 +50,9 @@ export function FinanceSnapshot() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <ProductScreenImage screen="financialReport" />
+            <ProductFrame scale={PREVIEW_SCALE}>
+              <FinanceScreen />
+            </ProductFrame>
           </Reveal>
         </div>
       </Container>
