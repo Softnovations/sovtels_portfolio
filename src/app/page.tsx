@@ -7,7 +7,6 @@ import { FinanceSnapshot } from "@/components/home/FinanceSnapshot";
 import { Offline } from "@/components/home/Offline";
 import { Why } from "@/components/home/Why";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
 
 export default function HomePage() {
   return (
@@ -21,7 +20,6 @@ export default function HomePage() {
       <Offline />
       <Why />
       <FinalCTA />
-      <MobileStickyCTA />
     </>
   );
 }

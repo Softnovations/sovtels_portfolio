@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Section";
 
 export function FinalCTA() {
   return (
-    <section className="bg-charcoal py-20 text-white pb-28 md:py-24 lg:pb-24">
+    <section className="bg-charcoal py-20 text-white md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker-bright">Sovtels Hotel & Motel Management</p>

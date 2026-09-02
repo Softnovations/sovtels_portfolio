@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { featureGroups } from "@/data/features";
 import type { ProductScreenshotKey } from "@/data/product-screenshots";
 import { ProductScreenImage } from "@/components/product/DashboardImage";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export const metadata: Metadata = {
@@ -41,20 +41,19 @@ export default function ProductPage() {
             ))}
           </div>
 
-          <div className="mt-16 card-grid grid-cols-1 sm:grid-cols-2">
-            {featureGroups.map((g) => (
-              <div key={g.id} className="surface-card flex h-full flex-col">
-                <p className="section-label">{g.title}</p>
-                <ul className="mt-3 flex-1 space-y-3">
-                  {g.items.map((item) => (
-                    <li key={item.id} className="border-t border-line pt-3">
-                      <p className="font-medium text-charcoal">{item.title}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-muted">{item.body}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-xl border border-line bg-paper-2 px-5 py-5 sm:flex-row sm:items-center sm:px-6">
+            <div className="min-w-0 max-w-xl">
+              <p className="font-display text-[clamp(1.25rem,2.5vw,1.6rem)] text-charcoal">
+                Want the full module list?
+              </p>
+              <p className="mt-1 text-[14px] text-muted">
+                Front office, operations, finance, and management — with what each piece does for the
+                hotel.
+              </p>
+            </div>
+            <Button href="/why-sovtels" variant="secondary" size="lg" className="w-full shrink-0 sm:w-auto">
+              Why Sovtels
+            </Button>
           </div>
         </Container>
       </section>
