@@ -23,6 +23,6 @@ export const footerLinks = {
   company: [
     { href: "/why-sovtels", label: "Why Sovtels" },
     { href: "/solutions", label: "Who it's for" },
-    { href: "/demo", label: "Request a Demo" },
+    { href: "/demo", label: "Request Demo" },
   ],
 };

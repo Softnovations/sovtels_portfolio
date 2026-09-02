@@ -27,7 +27,7 @@ function MobileBookingStory() {
       <Container>
         <Reveal>
           <p className="section-kicker">Front office</p>
-          <h2 className="font-display mt-2 text-[clamp(2rem,9vw,2.5rem)] leading-[1.05] text-charcoal">
+          <h2 className="section-title-mobile mt-2">
             From Booking
             <br />
             to Check-Out.
@@ -37,7 +37,7 @@ function MobileBookingStory() {
         <div className="mt-10 space-y-10">
           {bookingStorySteps.map((step, i) => (
             <Reveal key={step.id} delay={i * 0.04}>
-              <div className="product-stage overflow-hidden p-2">
+              <div className="product-stage overflow-hidden">
                 <StoryVisual stepId={step.id} />
               </div>
               <h3 className="font-display mt-4 text-2xl text-charcoal">{step.title}</h3>
@@ -65,9 +65,7 @@ function DesktopBookingStory() {
     return (
       <section className="hidden border-y border-line bg-white py-20 md:block">
         <Container>
-          <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-charcoal">
-            From Booking to Check-Out.
-          </h2>
+          <h2 className="section-title mt-2">From Booking to Check-Out.</h2>
           <div className="mt-10 space-y-12">
             {bookingStorySteps.map((s) => (
               <div key={s.id} className="grid items-center gap-6 lg:grid-cols-2">
@@ -75,7 +73,7 @@ function DesktopBookingStory() {
                   <h3 className="font-display text-2xl text-charcoal">{s.title}</h3>
                   <p className="mt-2 text-[15px] text-muted">{s.body}</p>
                 </div>
-                <div className="product-stage overflow-hidden p-2">
+                <div className="product-stage overflow-hidden">
                   <StoryVisual stepId={s.id} />
                 </div>
               </div>
@@ -89,12 +87,13 @@ function DesktopBookingStory() {
   return (
     <section className="hidden border-y border-line bg-white md:block">
       <div ref={wrapRef} className="relative">
-        <div ref={pinRef} className="flex min-h-[75vh] items-center py-16">
+        <div
+          ref={pinRef}
+          className="flex min-h-[calc(100vh-5rem)] items-start py-8 md:py-10"
+        >
           <Container>
             <p className="section-kicker">Front office</p>
-            <h2 className="font-display mt-2 text-[clamp(2rem,4vw,3.2rem)] text-charcoal">
-              From Booking to Check-Out.
-            </h2>
+            <h2 className="section-title mt-2">From Booking to Check-Out.</h2>
 
             <div className="mt-4 flex gap-2">
               {bookingStorySteps.map((s, i) => (
@@ -129,7 +128,7 @@ function DesktopBookingStory() {
                 ))}
               </div>
 
-              <div className="product-stage relative overflow-hidden p-2">
+              <div className="product-stage relative overflow-hidden">
                 {bookingStorySteps.map((s, i) => (
                   <div
                     key={s.id}

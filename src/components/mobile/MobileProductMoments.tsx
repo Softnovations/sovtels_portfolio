@@ -7,10 +7,8 @@ import { useRef } from "react";
 
 function MobileShell({ title, children }: { title?: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-line bg-white p-5 shadow-[0_12px_40px_rgba(26,31,28,0.08)]">
-      {title && (
-        <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-brand uppercase">{title}</p>
-      )}
+    <div className="surface-card">
+      {title && <p className="section-label mb-4">{title}</p>}
       {children}
     </div>
   );
@@ -137,7 +135,7 @@ export function MobileRoomCards() {
       {rooms.map((r) => (
         <div
           key={r.number}
-          className="rounded-2xl border border-line bg-white p-5 shadow-[0_8px_28px_rgba(26,31,28,0.06)]"
+          className="surface-card !p-5"
         >
           <p className="font-mono text-[clamp(1.75rem,7vw,2.25rem)] font-medium leading-none text-charcoal">
             {r.number}

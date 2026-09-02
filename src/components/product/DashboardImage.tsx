@@ -29,16 +29,7 @@ export function ProductScreenImage({
 
   if (!framed) return <div className={className}>{image}</div>;
 
-  return (
-    <div
-      className={cn(
-        "overflow-hidden rounded-xl border border-line bg-white shadow-[0_24px_64px_rgba(26,31,28,0.12)]",
-        className,
-      )}
-    >
-      {image}
-    </div>
-  );
+  return <div className={cn("product-stage overflow-hidden", className)}>{image}</div>;
 }
 
 /** @deprecated Use ProductScreenImage with screen="dashboard" */

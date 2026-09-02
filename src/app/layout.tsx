@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Loader } from "@/components/layout/Loader";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/layout/JsonLd";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/lib/seo";
 
 const display = Cormorant_Garamond({
@@ -77,6 +78,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ScrollToTop />
         </SmoothScroll>
       </body>
     </html>

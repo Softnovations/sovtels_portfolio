@@ -30,7 +30,8 @@ export function Offline() {
     <section id="offline" className="border-y border-line bg-charcoal py-14 text-white md:py-20">
       <Container>
         <Reveal>
-          <h2 className="font-display text-[clamp(2rem,9vw,3.5rem)] leading-[1.05]">
+          <p className="section-kicker-bright">Online + Offline</p>
+          <h2 className="font-display mt-2 text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.05]">
             Internet Down?
             <br />
             <span className="text-brand-bright">Keep Running.</span>
@@ -46,7 +47,7 @@ export function Offline() {
             <p className="text-white/50">↓</p>
             <p className="text-[14px] text-white/80">Internet connection lost</p>
             <p className="text-white/50">↓</p>
-            <div className="w-full max-w-xs rounded-2xl border border-white/15 bg-white/10 p-5">
+            <div className="w-full max-w-xs rounded-xl border border-white/15 bg-white/10 p-5">
               <p className="font-display text-xl text-brand-bright">SOVTELS CONTINUES</p>
               <ul className="mt-4 space-y-2 text-left text-[15px]">
                 {checks.map((item) => (

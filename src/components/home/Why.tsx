@@ -12,7 +12,8 @@ export function Why() {
     <section className="border-t border-line bg-white py-14 md:py-20">
       <Container>
         <Reveal>
-          <h2 className="font-display text-[clamp(2rem,9vw,3.2rem)] text-charcoal">Why Sovtels?</h2>
+          <p className="section-kicker">Why Sovtels</p>
+          <h2 className="section-title mt-2">Why Sovtels?</h2>
         </Reveal>
 
         <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:gap-8">

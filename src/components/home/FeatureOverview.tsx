@@ -20,7 +20,7 @@ export function FeatureOverview({ hideHeader = false }: { hideHeader?: boolean }
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="section-kicker">Complete system</p>
-                <h2 className="font-display mt-2 text-[clamp(2rem,9vw,3.4rem)] leading-[1.05] text-charcoal md:text-[clamp(2rem,4.2vw,3.4rem)]">
+                <h2 className="section-title mt-2">
                   <span className="md:hidden">
                     Everything Your
                     <br />
@@ -48,13 +48,11 @@ export function FeatureOverview({ hideHeader = false }: { hideHeader?: boolean }
         >
           {homepageFeatureGroups.map((group, gi) => (
             <Reveal key={group.id} delay={gi * 0.04}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <div className="group relative h-full overflow-hidden surface-card !pt-6 transition-colors hover:border-brand/30">
                 <div
                   className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${groupAccents[gi] ?? groupAccents[0]}`}
                 />
-                <p className="text-[11px] font-semibold tracking-[0.18em] text-brand uppercase">
-                  {group.title}
-                </p>
+                <p className="section-label">{group.title}</p>
                 <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-3.5 lg:grid-cols-1 lg:gap-y-3">
                   {group.items.map((item) => {
                     const Icon = item.icon;

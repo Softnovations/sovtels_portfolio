@@ -50,7 +50,7 @@ export function Footer() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <p className="mb-3 text-[11px] tracking-[0.18em] text-brand uppercase">Product</p>
+            <p className="section-label mb-3">Product</p>
             <ul className="space-y-2 text-sm text-muted">
               {footerLinks.product.map((l) => (
                 <li key={l.href}>
@@ -62,7 +62,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="md:col-span-4">
-            <p className="mb-3 text-[11px] tracking-[0.18em] text-brand uppercase">Company</p>
+            <p className="section-label mb-3">Company</p>
             <ul className="space-y-2 text-sm text-muted">
               {footerLinks.company.map((l) => (
                 <li key={l.href}>
@@ -80,7 +80,7 @@ export function Footer() {
           </p>
           <div className="relative h-10 w-10 overflow-hidden rounded-full bg-charcoal">
             <Image
-              src="/images/mascot.jpg"
+              src="/images/mascot.png"
               alt="Sovtels mascot"
               fill
               className="scale-110 object-cover"

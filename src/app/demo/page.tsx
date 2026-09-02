@@ -27,12 +27,12 @@ export default function DemoPage() {
         kicker="Reach out to walk through the system with us — or ask about fit, setup, and how it works on the floor."
         showCtas={false}
       />
-      <section className="pb-28">
+      <section className="pb-20 md:pb-24">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="text-[11px] tracking-[0.18em] text-brand uppercase">Contact Sovtels</p>
-            <div className="mt-5 space-y-5">
-              <div className="rounded-xl border border-line bg-white p-5">
+            <p className="section-kicker">Contact Sovtels</p>
+            <div className="mt-5 space-y-4">
+              <div className="surface-card">
                 <p className="flex items-center gap-2 text-[11px] font-medium tracking-[0.14em] text-muted uppercase">
                   <Phone className="h-3.5 w-3.5 text-brand" />
                   Phone
@@ -50,7 +50,7 @@ export default function DemoPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-line bg-white p-5">
+              <div className="surface-card">
                 <p className="text-[11px] font-medium tracking-[0.14em] text-muted uppercase">Viber</p>
                 <a
                   href={siteConfig.viber.href}
@@ -60,7 +60,7 @@ export default function DemoPage() {
                 </a>
               </div>
 
-              <div className="rounded-xl border border-line bg-white p-5">
+              <div className="surface-card">
                 <p className="text-[11px] font-medium tracking-[0.14em] text-muted uppercase">Facebook</p>
                 <a
                   href={siteConfig.facebook}
@@ -74,7 +74,7 @@ export default function DemoPage() {
               </div>
             </div>
 
-            <p className="mt-10 text-[11px] tracking-[0.18em] text-brand uppercase">What a demo covers</p>
+            <p className="section-kicker mt-10">What a demo covers</p>
             <ul className="mt-4 space-y-3 text-sm text-muted">
               {[
                 "Reservation to check-out",
@@ -92,15 +92,15 @@ export default function DemoPage() {
           </div>
 
           <aside className="space-y-4 lg:col-span-5">
-            <div className="rounded-lg border border-line bg-white p-6">
-              <p className="text-[11px] tracking-[0.16em] text-brand uppercase">For</p>
-              <p className="mt-2 text-sm text-muted">
+            <div className="surface-card">
+              <p className="section-label">For</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 Hotel owners, managers, and operators evaluating a connected property system.
               </p>
             </div>
-            <div className="rounded-lg border border-line bg-white p-6">
-              <p className="text-[11px] tracking-[0.16em] text-brand uppercase">Focus</p>
-              <p className="mt-2 text-sm text-muted">
+            <div className="surface-card">
+              <p className="section-label">Focus</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 Myanmar and similar markets where internet reliability and practical daily operations
                 matter.
               </p>

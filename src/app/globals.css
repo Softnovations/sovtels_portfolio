@@ -27,6 +27,9 @@
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-xl: 20px;
+
+  --shadow-elevated: 0 4px 24px rgba(26, 31, 28, 0.06), 0 24px 64px rgba(26, 31, 28, 0.1);
+  --shadow-soft: 0 8px 28px rgba(26, 31, 28, 0.06);
 }
 
 html {
@@ -34,7 +37,7 @@ html {
   color: #1a1f1c;
   color-scheme: light;
   scroll-behavior: auto;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 80px;
 }
 
 html.lenis,
@@ -131,10 +134,30 @@ body {
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-line);
   background: #fff;
-  padding: 1rem;
-  box-shadow:
-    0 4px 24px rgba(26, 31, 28, 0.06),
-    0 24px 64px rgba(26, 31, 28, 0.1);
+  padding: 0.5rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.surface-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-line);
+  background: #fff;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--color-charcoal);
+}
+
+.section-title-mobile {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 9vw, 2.5rem);
+  line-height: 1.05;
+  color: var(--color-charcoal);
 }
 
 .product-stage::before {
@@ -159,6 +182,22 @@ body {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.section-kicker-bright {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-brand-bright);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-brand);
 }

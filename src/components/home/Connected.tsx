@@ -17,7 +17,7 @@ export function Connected() {
         <Reveal>
           <div className="grid items-end gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <p className="text-[11px] tracking-[0.2em] text-brand-bright uppercase">Connected operations</p>
+              <p className="section-kicker-bright">Connected operations</p>
               <h2 className="font-display mt-3 text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] text-white">
                 Everything Your Hotel Needs. Connected.
               </h2>

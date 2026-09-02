@@ -28,20 +28,12 @@ export function Section({
   kicker?: string;
 }) {
   return (
-    <section id={id} className={cn("relative py-16 md:py-20", className)}>
+    <section id={id} className={cn("relative py-14 md:py-20", className)}>
       <Container>
         {(eyebrow || title) && (
           <header className="mb-8 max-w-2xl md:mb-10">
-            {eyebrow && (
-              <p className="mb-3 text-[11px] font-medium tracking-[0.22em] text-brand uppercase">
-                {eyebrow}
-              </p>
-            )}
-            {title && (
-              <h2 className="font-display text-[clamp(1.85rem,3.8vw,3.1rem)] leading-[1.08] text-charcoal">
-                {title}
-              </h2>
-            )}
+            {eyebrow && <p className="section-kicker">{eyebrow}</p>}
+            {title && <h2 className="section-title mt-2">{title}</h2>}
             {kicker && <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">{kicker}</p>}
           </header>
         )}

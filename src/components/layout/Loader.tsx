@@ -63,7 +63,7 @@ export function Loader() {
           <div className="relative mb-6 h-16 w-16 overflow-hidden rounded-xl bg-white ring-1 ring-line">
             <Image src="/images/logo.png" alt="" fill className="object-contain p-1" sizes="64px" priority />
           </div>
-          <p className="text-sm tracking-[0.28em] text-charcoal">SOVTELS</p>
+          <p className="text-sm tracking-[0.14em] text-charcoal">SOVTELS</p>
           <div className="mt-8 w-48">
             <div className="h-0.5 w-full bg-line">
               <motion.div className="h-0.5 bg-brand" style={{ width: `${progress * 100}%` }} />

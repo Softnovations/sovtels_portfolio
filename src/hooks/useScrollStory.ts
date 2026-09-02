@@ -6,6 +6,9 @@ import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Matches fixed navbar height (68px) + breathing room so pinned titles aren't clipped */
+export const SCROLL_STORY_NAV_OFFSET = 80;
+
 type Options = {
   /** Viewport-height units of scroll per step */
   stepHeight?: number;
@@ -27,11 +30,14 @@ export function useScrollStory(stepCount: number, reduce: boolean | null, option
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: wrap,
-        start: "top top",
-        end: `+=${(stepCount - 1) * stepHeight}%`,
+        start: () => `top ${SCROLL_STORY_NAV_OFFSET}px`,
+        end: () => `+=${(stepCount - 1) * stepHeight * (window.innerHeight / 100)}`,
         pin: pin,
-        scrub: 0.35,
-        anticipatePin: 1,
+        pinSpacing: true,
+        scrub: 0.65,
+        // anticipatePin causes a hard jump with Lenis + fixed nav
+        anticipatePin: 0,
+        invalidateOnRefresh: true,
         onUpdate: (self) => {
           const next = Math.min(stepCount - 1, Math.floor(self.progress * stepCount));
           setStep((prev) => (prev === next ? prev : next));
@@ -39,7 +45,16 @@ export function useScrollStory(stepCount: number, reduce: boolean | null, option
       });
     }, wrap);
 
-    return () => ctx.revert();
+    // Refresh after layout so pin offset is accurate
+    const refresh = () => ScrollTrigger.refresh();
+    const t = window.setTimeout(refresh, 100);
+    window.addEventListener("resize", refresh);
+
+    return () => {
+      window.clearTimeout(t);
+      window.removeEventListener("resize", refresh);
+      ctx.revert();
+    };
   }, [stepCount, stepHeight, reduce]);
 
   return { wrapRef, pinRef, step };

@@ -30,14 +30,12 @@ export default function ProductPage() {
         title="One system to manage your entire hotel."
         kicker="Reservations, rooms, guests, housekeeping, finance, services, staff and reports — connected through Sovtels."
       />
-      <section className="pb-16">
+      <section className="py-14 md:py-20">
         <Container>
-          <div className="space-y-12">
+          <div className="space-y-10">
             {productGallery.map(({ screen, label }) => (
               <div key={screen}>
-                <p className="mb-3 text-[11px] font-medium tracking-[0.14em] text-brand uppercase">
-                  {label}
-                </p>
+                <p className="section-label mb-3">{label}</p>
                 <ProductScreenImage screen={screen} priority={screen === "dashboard"} />
               </div>
             ))}
@@ -46,12 +44,12 @@ export default function ProductPage() {
           <div className="mt-16 grid gap-8 sm:grid-cols-2">
             {featureGroups.map((g) => (
               <div key={g.id}>
-                <p className="text-[10px] tracking-[0.18em] text-brand uppercase">{g.title}</p>
+                <p className="section-label">{g.title}</p>
                 <ul className="mt-3 space-y-3">
                   {g.items.map((item) => (
                     <li key={item.id} className="border-t border-line pt-3">
                       <p className="font-medium text-charcoal">{item.title}</p>
-                      <p className="mt-1 text-sm text-muted">{item.body}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">{item.body}</p>
                     </li>
                   ))}
                 </ul>

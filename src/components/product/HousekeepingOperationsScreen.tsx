@@ -236,7 +236,7 @@ export function HousekeepingStepCard({ step }: { step: number }) {
   const roomStatus = roomStatusForStep(step);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_8px_28px_rgba(26,31,28,0.06)]">
+    <div className="surface-card overflow-hidden !p-0">
       <div className="border-b border-line bg-[#f8faf7] px-4 py-3">
         <p className="text-[10px] font-medium tracking-[0.12em] text-brand uppercase">Sovtels · Room {focusRoom.number}</p>
       </div>

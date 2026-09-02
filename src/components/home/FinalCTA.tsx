@@ -5,9 +5,7 @@ export function FinalCTA() {
   return (
     <section className="bg-charcoal py-20 text-white md:py-24 pb-28 md:pb-24">
       <Container className="text-center">
-        <p className="text-[11px] tracking-[0.22em] text-brand-bright uppercase">
-          Sovtels Hotel & Motel Management
-        </p>
+        <p className="section-kicker-bright">Sovtels Hotel & Motel Management</p>
         <h2 className="font-display mt-5 text-[clamp(2.5rem,10vw,5rem)] leading-[0.95]">
           Your Hotel.
           <br />

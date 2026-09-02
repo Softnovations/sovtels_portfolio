@@ -17,13 +17,13 @@ function MobileHousekeeping() {
     <section className="bg-mesh-warm border-y border-line py-14 md:hidden">
       <Container>
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.2em] text-brand uppercase">Connected operations</p>
-          <h2 className="font-display mt-2 text-[clamp(2rem,9vw,2.5rem)] leading-[1.05] text-charcoal">
+          <p className="section-kicker">Connected operations</p>
+          <h2 className="section-title-mobile mt-2">
             Check-Out
             <br />
             to Ready.
           </h2>
-          <p className="mt-3 text-[15px] text-muted">
+          <p className="mt-3 text-[15px] leading-relaxed text-muted">
             One room, one flow — reception and housekeeping stay aligned.
           </p>
         </Reveal>
@@ -54,16 +54,15 @@ function DesktopHousekeeping() {
   return (
     <section className="bg-mesh-warm hidden border-y border-line md:block">
       <div ref={wrapRef} className="relative">
-        <div ref={pinRef} className="flex min-h-[70vh] items-center py-16">
+        <div
+          ref={pinRef}
+          className="flex min-h-[calc(100vh-5rem)] items-start py-8 md:py-10"
+        >
           <Container>
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-[11px] font-medium tracking-[0.2em] text-brand uppercase">
-                  Connected operations
-                </p>
-                <h2 className="font-display mt-2 text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.02] text-charcoal">
-                  Check-Out to Ready.
-                </h2>
+                <p className="section-kicker">Connected operations</p>
+                <h2 className="section-title mt-2">Check-Out to Ready.</h2>
               </div>
               <p className="max-w-xs text-[14px] text-muted">
                 When a guest leaves, housekeeping and reception stay on the same page.

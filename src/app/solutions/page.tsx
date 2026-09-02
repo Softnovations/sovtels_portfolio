@@ -29,13 +29,15 @@ export default function SolutionsPage() {
         kicker="The same operational core — scaled to how your property actually works."
       />
       <WhoFor />
-      <section className="pb-16">
+      <section className="border-t border-line bg-paper-2 py-14 md:py-20">
         <Container>
-          <div className="grid gap-4 md:grid-cols-2">
+          <p className="section-kicker">Property types</p>
+          <h2 className="section-title mt-2">How Sovtels fits each property.</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
             {audiences.map((a) => (
-              <article key={a.id} className="rounded-lg border border-line bg-white p-6">
-                <h2 className="text-xl font-medium text-charcoal">{a.title}</h2>
-                <p className="mt-2 text-sm text-muted">{extra[a.id]}</p>
+              <article key={a.id} className="surface-card">
+                <h3 className="text-lg font-medium text-charcoal">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{extra[a.id]}</p>
               </article>
             ))}
           </div>

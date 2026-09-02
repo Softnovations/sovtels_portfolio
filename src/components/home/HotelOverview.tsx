@@ -14,11 +14,11 @@ const PREVIEW_SCALE = 0.78;
 
 export function HotelOverview() {
   return (
-    <section id="showcase" className="bg-mesh-light py-14 md:py-16">
+    <section id="showcase" className="bg-mesh-light py-14 md:py-20">
       <Container>
         <Reveal>
           <p className="section-kicker">Management view</p>
-          <h2 className="font-display mt-2 text-[clamp(2rem,9vw,3.2rem)] leading-[1.05] text-charcoal">
+          <h2 className="section-title mt-2">
             <span className="md:hidden">
               See Your Hotel
               <br />
@@ -26,42 +26,30 @@ export function HotelOverview() {
             </span>
             <span className="hidden md:inline">See Your Hotel Clearly.</span>
           </h2>
-          <p className="mt-3 max-w-xl text-[15px] text-muted">
+          <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
             One look — occupancy, rooms, arrivals, revenue and guest reporting together.
           </p>
         </Reveal>
 
         <div className="mt-8 space-y-8">
           <Reveal delay={0.06}>
-            <p className="mb-2 text-[11px] font-medium tracking-[0.14em] text-brand uppercase">
-              Dashboard
-            </p>
+            <p className="section-label mb-2">Dashboard</p>
             <ProductFrame scale={PREVIEW_SCALE}>
               <DashboardScreen />
             </ProductFrame>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mb-2 text-[11px] font-medium tracking-[0.14em] text-brand uppercase">
-              Reservation & room availability
-            </p>
+            <p className="section-label mb-2">Reservation & room availability</p>
             <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
               <ProductFrame scale={PREVIEW_SCALE}>
                 <ReservationManagementScreen />
               </ProductFrame>
               <div>
-                <p className="mb-2 text-[11px] font-medium tracking-[0.14em] text-brand uppercase lg:hidden">
-                  Today
-                </p>
-                <p className="mb-2 hidden text-[11px] font-medium tracking-[0.14em] text-brand uppercase lg:block">
-                  Today
-                </p>
+                <p className="section-label mb-2">Today</p>
                 <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
                   {todayPanel.map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-xl border border-line bg-white px-4 py-3 shadow-sm"
-                    >
+                    <div key={item.label} className="surface-card !p-4 !shadow-none">
                       <p className="text-[11px] font-medium tracking-[0.1em] text-muted uppercase">
                         {item.label}
                       </p>
@@ -76,9 +64,7 @@ export function HotelOverview() {
           </Reveal>
 
           <Reveal delay={0.14}>
-            <p className="mb-2 text-[11px] font-medium tracking-[0.14em] text-brand uppercase">
-              Guest Report · GLIS
-            </p>
+            <p className="section-label mb-2">Guest Report · GLIS</p>
             <ProductFrame scale={PREVIEW_SCALE}>
               <GuestReportScreen />
             </ProductFrame>

@@ -86,10 +86,10 @@ export function AppShell({
       <div className="flex min-h-[340px]">
         <aside className="hidden w-[210px] shrink-0 flex-col border-r border-[#e8ece6] bg-[#fbfbfa] sm:flex">
           <div className="flex items-center gap-2.5 border-b border-[#e8ece6] px-4 py-4">
-            <span className="relative h-8 w-8 overflow-hidden rounded-md bg-white">
+            <span className="relative h-8 w-8 overflow-hidden rounded-md bg-white ring-1 ring-line">
               <Image src="/images/logo.png" alt="" fill className="object-contain p-0.5" sizes="32px" />
             </span>
-            <span className="text-[15px] font-semibold tracking-tight text-charcoal">Sovtels</span>
+            <span className="text-[15px] font-semibold tracking-[0.14em] text-charcoal">SOVTELS</span>
           </div>
 
           <nav className="flex-1 space-y-4 overflow-hidden p-3">
