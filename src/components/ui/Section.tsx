@@ -1,0 +1,52 @@
+import { cn } from "@/lib/utils";
+
+export function Container({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn("mx-auto w-full max-w-[1200px] px-5 sm:px-8", className)}>{children}</div>
+  );
+}
+
+export function Section({
+  id,
+  children,
+  className,
+  eyebrow,
+  title,
+  kicker,
+}: {
+  id?: string;
+  children: React.ReactNode;
+  className?: string;
+  eyebrow?: string;
+  title?: React.ReactNode;
+  kicker?: string;
+}) {
+  return (
+    <section id={id} className={cn("relative py-16 md:py-20", className)}>
+      <Container>
+        {(eyebrow || title) && (
+          <header className="mb-8 max-w-2xl md:mb-10">
+            {eyebrow && (
+              <p className="mb-3 text-[11px] font-medium tracking-[0.22em] text-brand uppercase">
+                {eyebrow}
+              </p>
+            )}
+            {title && (
+              <h2 className="font-display text-[clamp(1.85rem,3.8vw,3.1rem)] leading-[1.08] text-charcoal">
+                {title}
+              </h2>
+            )}
+            {kicker && <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">{kicker}</p>}
+          </header>
+        )}
+        {children}
+      </Container>
+    </section>
+  );
+}
